@@ -100,3 +100,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Owl Carousel v2.3.4
+--------------------------------------------- */
+
+@import "../inc/owl.carousel/dist/assets/owl.carousel.min";
+@import "../inc/owl.carousel/dist/assets/owl.theme.default.min"
