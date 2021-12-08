@@ -1,0 +1,70 @@
+/*!
+Theme Name: Gulacsi Bulma
+Theme URI: http://underscores.me/
+Author: Andras Gulacsi
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: gulacsi-bulma
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Gulacsi Bulma is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+
+@import "../node_modules/bulmaswatch/sandstone/_variables";
+@import "../node_modules/bulma/bulma";
+@import "../node_modules/bulmaswatch/sandstone/_overrides";
+
+footer {
+  .widget-area {
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      row-gap: 30px;
+      column-gap: 50px;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "block7 block8 block9 block10"
+        "block11 block12 block13 block14"
+;
+
+      #block-7 {
+        grid-area: block7;
+      }
+      #block-8 {
+        grid-area: block8;
+      }
+      #block-9 {
+        grid-area: block9;
+      }
+      #block-10 {
+        grid-area: block10;
+      }
+      #block-11 {
+        grid-area: block11;
+      }
+    }
+  }
+}
+
+.site-header {
+  margin-bottom: 1.5em;
+  
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+.site-footer {
+  margin-top: 1.5em;
+}

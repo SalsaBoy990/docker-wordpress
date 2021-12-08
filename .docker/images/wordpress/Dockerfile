@@ -4,6 +4,9 @@
 # Github Repo: https://github.com/conetix/docker-wordpress-wp-cli
 
 FROM wordpress:latest
+ARG BASEDIR
+# required build arg for apache2 configuration
+ARG SERVER_NAME
 
 # Install sudo in order to run wp-cli as the www-data user 
 # install mysql client, text editors
@@ -24,4 +27,11 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Copy modified ini file to be able to use mailcatcher smtp server
 # sendmail_path = /usr/bin/env catchmail -f wordpress@local.test
-COPY php.ini-development /usr/local/etc/php/
+COPY php.ini-development /usr/local/etc/php
+
+# Copy apache conf file
+COPY ./conf/000-default.conf  /etc/apache2/sites-available/000-default.conf
+
+# Replace server name with our custom domain in apache2 conf
+RUN sed -i -e "s/127.0.0.1/${SERVER_NAME}/g" /etc/apache2/sites-available/000-default.conf
+
